@@ -18,6 +18,7 @@ function readRecords() {
 }
 
 function displayColumns(value) {
+   
     return 	'<td>'+value.id+'</td>'
             + '<td class="name">'+value.name+'</td>'
 			+ '<td class="description">'+value.description+'</td>'
@@ -27,9 +28,14 @@ function displayColumns(value) {
 			+ '<td align="center">'
 			+	'<button onclick="deleteRecord('+ value.id +')" class="btn btn-danger">Delete</button>'
 			+ '</td>';
+    
+    
+    
 }
 
+
 function addRecord() {
+    
     $('#id').val('');
     $('#name').val('');
     $('#description').val('');
@@ -38,6 +44,7 @@ function addRecord() {
   //  $('#add_new_record_modal').modal('show');
 }
 
+
 function viewRecord(id) {
     var url = "/categories/" + id;
     
@@ -45,7 +52,6 @@ function viewRecord(id) {
         //bind the values to the form fields
         $('#name').val(data.name);
         $('#description').val(data.description);
-
         $('#id').val(id);
         $('#myModalLabel').html('Edit Category');
         
@@ -55,11 +61,20 @@ function viewRecord(id) {
 
 function saveRecord() {
     var formData = $('#record_form').serializeObject();
-    if(formData.id) {
+    
+    console.log(formData)
+    if(formData.name=='' || formData.description=='' )
+  {
+        window.alert("Nu uita sa completezi campurile!")
+  }
+  else {
+     if(formData.id) {
         updateRecord(formData);
     } else {
         createRecord(formData);
     }
+  }
+  
 }
 
 function createRecord(formData) {

@@ -27,7 +27,7 @@ function showProducts(categoryId) {
                 html = html + '<div class="product">'
                   +  '<h2>'+product.name+'</h2>'
                   +  '<p>'+product.description+'</p>'
-                  +  '<p>Pret: '+product.pret+'</p>'
+                  +  '<p>Pret: '+product.price+'</p>'
                   +  '<p>Categorie: '+product.category.name+'</p>'
                 + '</div>';
                 
@@ -36,7 +36,7 @@ function showProducts(categoryId) {
                 if(product.reviews) {
                     product.reviews.forEach(
                         function(reviewData) {
-                            html = html + reviewData.name + ' ' + reviewData.content;
+                            html = html + reviewData.name + ' ' + reviewData.content+' Nota: '+reviewData.score;
                             html = html + '<br>';
                         }
                     )

@@ -28,9 +28,10 @@
         </div>
     </div>
     <ul class="nav nav-tabs">
-      <li role="presentation"><a href="/admin/">Home</a></li>
+      <li role="presentation"><a href="/">Home</a></li>
       <li role="presentation"><a href="categories.html">Categorii</a></li>
       <li role="presentation" class="active"><a href="products.html">Produse</a></li>
+      <li role="presentation" ><a href="reviews.html">Reviews</a></li>
     </ul>
     <br/>
     <div class="row">
@@ -51,6 +52,7 @@
 							<th>Category Name</th>
 							<th>Nume</th>
 							<th>Descriere</th>
+							<th>Pret</th>
 							<th>Update</th>
 							<th>Exclude</th>
 						</tr>
@@ -77,7 +79,7 @@
                     <input type="hidden" name="id" id="id" />
                     <div class="form-group">
                         <label for="name">ID Categorie</label>
-                        <input type="text" name="category_id" id="category_id" placeholder="ID Categorie" class="form-control"/>
+                        <input type="number" name="category_id" id="category_id" placeholder="ID Categorie" class="form-control"/>
                     </div>
                     <div class="form-group">
                         <label for="name">Nume</label>
@@ -89,7 +91,7 @@
                     </div>
                     <div class="form-group">
                         <label for="name">Pret</label>
-                        <input type="text" name="price" id="price" placeholder="Nume" class="form-control"/>
+                        <input type="Number" name="price" id="price" placeholder="Pret" class="form-control"/>
                     </div>
                 </form>
             </div>
