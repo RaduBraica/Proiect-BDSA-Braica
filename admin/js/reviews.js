@@ -70,6 +70,12 @@ function saveRecord1() {
     if(formData.product_id=='' || formData.name=='' || formData.content=='' || formData.score==''){
         window.alert("Nu uita sa completezi campurile!")
     }
+    if(formData.product_id < 0){
+        window.alert("Id-ul trebuie sa fie mai mare ca 0!")
+    }
+    if(formData.score < 0){
+        window.alert("Score-ul trebuie sa fie intre 0 si 10!")
+    }
     else {
             //decide if it's an edit or create
             if(formData.id) {

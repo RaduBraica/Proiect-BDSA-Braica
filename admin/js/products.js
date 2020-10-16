@@ -70,6 +70,12 @@ function saveRecord() {
     if(formData.category_id=='' || formData.name=='' || formData.description=='' || formData.price==''){
         window.alert("Nu uita sa completezi campurile!")
     }
+    if(formData.category_id < 0){
+        window.alert("Id-ul trebuie sa fie mai mare ca 0!")
+    }
+    if(formData.price < 0){
+        window.alert("Pretul trebuie sa fie mai mare ca 0!")
+    }
     else {
             //decide if it's an edit or create
             if(formData.id) {
@@ -125,4 +131,9 @@ function deleteRecord(id) {
             $('#row_id_'+id).remove();
         }
     });
+    
+    
+    
+  
+    
 }

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
     <meta charset="UTF-8">
-    <title>Catalog Admin - Products</title>
+    <title>Catalog Autovehicule - Products</title>
     
     <!-- Jquery JS file -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -17,6 +18,61 @@
     <!-- Custom JS file -->
     <script type="text/javascript" src="js/serialize.js"></script>
     <script type="text/javascript" src="js/products.js"></script>
+      <style>
+      
+    
+        tr:hover {background-color:	#DCDCDC;
+                color: blue;
+        }
+        #articles tr:hover {background-color:	#DCDCDC;
+                color: blue;
+        }
+        
+         #articles  th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #A9A9A9;
+            color: white;
+        }
+        #articles tr{
+            text-align: center;
+        }
+        
+        #adauga {
+             
+              border: none;
+              color: white;
+              padding: 9px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 28px;
+              margin: 4px 2px;
+              cursor: pointer;
+              border-radius: 100%;
+              
+        
+        }
+        
+        #save {
+             
+              border: none;
+              color: white;
+              padding: 15px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 10px;
+              margin: 4px 2px;
+              cursor: pointer;
+              border-radius: 100%;
+              background-color: #282424;
+              ;
+        }
+        
+    </style>
+  
 </head>
 <body>
 
@@ -24,7 +80,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Product Catalog Admin</h1>
+            <h1>Products autovehicule</h1>
         </div>
     </div>
     <ul class="nav nav-tabs">
@@ -37,7 +93,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="pull-right">
-                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal" onclick="addRecord()">Adauga</button>
+                <button id=adauga class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal" onclick="addRecord()">+</button>
             </div>
         </div>
     </div>
@@ -48,11 +104,11 @@
                 <h3>Produse</h3>
                 <table id="articles" class="table table-bordered table-striped">
 						<tr>
-							<th>ID.</th>
+							<th>ID produs</th>
 							<th>Category Name</th>
 							<th>Nume</th>
 							<th>Descriere</th>
-							<th>Pret</th>
+							<th >Pret</th>
 							<th>Update</th>
 							<th>Exclude</th>
 						</tr>
@@ -79,7 +135,7 @@
                     <input type="hidden" name="id" id="id" />
                     <div class="form-group">
                         <label for="name">ID Categorie</label>
-                        <input type="number" name="category_id" id="category_id" placeholder="ID Categorie" class="form-control"/>
+                        <input type="number" name="category_id" id="category_id" placeholder="ID Categorie" class="form-control" min="0"/>
                     </div>
                     <div class="form-group">
                         <label for="name">Nume</label>
@@ -91,13 +147,13 @@
                     </div>
                     <div class="form-group">
                         <label for="name">Pret</label>
-                        <input type="Number" name="price" id="price" placeholder="Pret" class="form-control"/>
+                        <input type="number" name="price" id="price" placeholder="Pret" class="form-control" min="0"/>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onclick="saveRecord()">Save Record</button>
+                
+                <button id=save type="button" class="btn btn-primary" onclick="saveRecord()">Save</button>
             </div>
         </div>
     </div>
